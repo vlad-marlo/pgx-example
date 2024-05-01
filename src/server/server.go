@@ -1,7 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"github.com/vlad-marlo/pgx-example/internal/controller/http"
+)
 
 func main() {
-	fmt.Println("hello, go")
+	ctrl := http.New()
+	if err := ctrl.Start(); err != nil {
+		panic(err)
+	}
 }
